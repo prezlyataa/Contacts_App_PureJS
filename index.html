@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contacts</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="inputs_form">
+            <h3>Add new person</h3>
+            <form class="form">
+                <input id="firstname" class="input_field" type="text" placeholder="First name">
+                <input id="lastname" class="input_field" type="text" placeholder="Last name">
+                <input id="email"  class="input_field" type="email" placeholder="Email">
+                <input id="phone" class="input_field" type="number" placeholder="Phone">
+                <input id="date" class="input_field" type="date">
+                <button class="btn" onclick="add_contacts()">Add</button>
+                <button class="btn">Reset</button>
+            </form>
+        </div>
+        <div class="contacts"></div>
+    </div>
+
+<script src="js/common.js"></script>
+</body>
+</html>
