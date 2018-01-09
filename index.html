@@ -13,17 +13,21 @@
     <div class="container">
         <div class="inputs_form">
             <h3>Add new person</h3>
-            <form class="form">
+            <form id="form" class="form">
                 <input id="firstname" class="input_field" type="text" placeholder="First name">
                 <input id="lastname" class="input_field" type="text" placeholder="Last name">
                 <input id="email"  class="input_field" type="email" placeholder="Email">
                 <input id="phone" class="input_field" type="number" placeholder="Phone">
                 <input id="date" class="input_field" type="date">
-                <button class="btn" onclick="add_contacts()">Add</button>
-                <button class="btn">Reset</button>
             </form>
+            <div class="btn_block">
+                <button class="btn" onclick="add_contacts()">Add</button>
+                <button class="btn" onclick="reset_form()">Reset</button>
+            </div>
         </div>
-        <div class="contacts"></div>
+        <div class="contacts">
+            <div id="list" class="list"></div>
+        </div>
     </div>
 
 <script src="js/common.js"></script>
