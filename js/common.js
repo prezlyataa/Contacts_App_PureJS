@@ -30,9 +30,14 @@ function add_contacts() {
     var remove = document.createElement('button');
     remove.innerHTML = 'Remove';
     remove.className = 'btn';
-    remove.onclick = function() {
 
-    }
+    /*  Remove item from list function   */
+
+    remove.onclick = function() {
+        var listItem = this.parentNode;
+        list = listItem.parentNode;
+        list.removeChild(listItem);
+    };
 
     contacts.forEach((item, index) => {
         firstname.appendChild(document.createTextNode(item.firstname)) ;
@@ -44,7 +49,6 @@ function add_contacts() {
     contact.appendChild(remove);
     list.appendChild(contact);
 
-    console.log(contacts);
 };
 
 /*   Function reset our form   */
