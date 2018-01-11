@@ -27,12 +27,14 @@ function add_contacts() {
     contact.className = 'contact';
     var firstname = document.createElement('h3');
     var lastname = document.createElement('h3');
+    var email = document.createElement('p');
+    var phone = document.createElement('p');
+    var date = document.createElement('p');
     var remove = document.createElement('button');
     remove.innerHTML = 'Remove';
     remove.className = 'btn';
 
     /*  Remove item from list function   */
-
     remove.onclick = function() {
         var listItem = this.parentNode;
         list = listItem.parentNode;
@@ -40,16 +42,23 @@ function add_contacts() {
     };
 
     contacts.forEach((item, index) => {
-        firstname.appendChild(document.createTextNode(item.firstname)) ;
-        lastname.appendChild(document.createTextNode(item.lastname)) ;
+        firstname.appendChild(document.createTextNode(item.firstname));
+        lastname.appendChild(document.createTextNode(item.lastname));
+        email.appendChild(document.createTextNode(item.email));
+        phone.appendChild(document.createTextNode(item.phone));
+        date.appendChild(document.createTextNode(item.date));
     });
 
     contact.appendChild(firstname);
     contact.appendChild(lastname);
+    contact.appendChild(email);
+    contact.appendChild(phone);
+    contact.appendChild(date);
     contact.appendChild(remove);
     list.appendChild(contact);
-
+    console.log(contacts);
 };
+
 
 /*   Function reset our form   */
 function reset_form() {
