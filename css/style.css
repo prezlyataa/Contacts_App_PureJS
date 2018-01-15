@@ -47,3 +47,7 @@
     border-radius: 2px;
     padding: 10px;
 }
+
+.warning {
+    border-color: red;
+}
