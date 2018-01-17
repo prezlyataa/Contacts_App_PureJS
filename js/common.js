@@ -7,6 +7,8 @@ var Contact = function (firstname, lastname, email, phone, date) {
     this.date = date;
 };
 
+var inputValues = ['firstname', 'lastname', 'email', 'phone', 'date'];
+
 /*   Initialize array of our contacts   */
 var contacts = [];
 
@@ -46,26 +48,24 @@ function add_contacts() {
        };
 
        contacts.forEach(item => {
-           firstname.appendChild(document.createTextNode(item.firstname));
-           lastname.appendChild(document.createTextNode(item.lastname));
-           email.appendChild(document.createTextNode(item.email));
-           phone.appendChild(document.createTextNode(item.phone));
-           date.appendChild(document.createTextNode(item.date));
+            firstname.appendChild(document.createTextNode(item.firstname));
+            lastname.appendChild(document.createTextNode(item.lastname));
+            email.appendChild(document.createTextNode(item.email));
+            phone.appendChild(document.createTextNode(item.phone));
+            date.appendChild(document.createTextNode(item.date));
        });
 
-       contact.appendChild(firstname);
-       contact.appendChild(lastname);
-       contact.appendChild(email);
-       contact.appendChild(phone);
-       contact.appendChild(date);
-       contact.appendChild(remove);
+       var createdContactValues = [firstname, lastname, email, phone, date, remove];
+
+       createdContactValues.map(value => {
+           contact.appendChild(value);
+       })
+
        list.appendChild(contact);
-   } else {
-        document.getElementById('firstname').classList.add('warning');
-        document.getElementById('lastname').classList.add('warning');
-        document.getElementById('email').classList.add('warning');
-        document.getElementById('phone').classList.add('warning');
-        document.getElementById('date').classList.add('warning');
+    } else {
+        inputValues.map(value => {
+            document.getElementById(value).classList.add('warning');
+        });
     }
 
     /*  Clean our array after submit to list  */
@@ -81,9 +81,7 @@ function reset_form() {
 
 /*   Function reset our inputs   */
 function default_input() {
-    document.getElementById('firstname').classList.remove('warning');
-    document.getElementById('lastname').classList.remove('warning');
-    document.getElementById('email').classList.remove('warning');
-    document.getElementById('phone').classList.remove('warning');
-    document.getElementById('date').classList.remove('warning');
+    inputValues.map(value => {
+        document.getElementById(value).classList.remove('warning');
+    });
 }
