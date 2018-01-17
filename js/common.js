@@ -37,6 +37,8 @@ function add_contacts() {
        var phone = document.createElement('p');
        var date = document.createElement('p');
        var remove = document.createElement('button');
+       var code = document.createElement('p');
+       code.className = 'code';
        remove.innerHTML = 'Remove';
        remove.className = 'btn';
 
@@ -55,15 +57,14 @@ function add_contacts() {
             date.appendChild(document.createTextNode(item.date));
        });
 
-       var createdContactValues = [firstname, lastname, email, phone, date, remove];
+       var createdContactValues = [firstname, lastname, email, phone, date, remove, code];
 
        createdContactValues.map(value => {
            contact.appendChild(value);
-       })
-
+       });
        list.appendChild(contact);
     } else {
-        inputValues.map(value => {
+        inputValues.forEach(value => {
             document.getElementById(value).classList.add('warning');
         });
     }
