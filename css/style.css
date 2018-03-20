@@ -34,10 +34,6 @@
     color: red;
 }
 
-.code:before {
-    content: 'Списдженний код!!!';
-}
-
 .btn:focus {
     outline: none;
 }

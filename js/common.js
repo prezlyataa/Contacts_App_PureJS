@@ -37,8 +37,6 @@ function add_contacts() {
        var phone = document.createElement('p');
        var date = document.createElement('p');
        var remove = document.createElement('button');
-       var code = document.createElement('p');
-       code.className = 'code';
        remove.innerHTML = 'Remove';
        remove.className = 'btn';
 
@@ -57,7 +55,7 @@ function add_contacts() {
             date.appendChild(document.createTextNode(item.date));
        });
 
-       var createdContactValues = [firstname, lastname, email, phone, date, remove, code];
+       var createdContactValues = [firstname, lastname, email, phone, date, remove];
 
        createdContactValues.map(value => {
            contact.appendChild(value);
